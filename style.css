@@ -6,6 +6,9 @@ body {
 	background: var(--tg-theme-bg-color);
 }
 
+label{
+    font-size: 30px;
+}
 .container {
 	max-width: 390px;
 }
