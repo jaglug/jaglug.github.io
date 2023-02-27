@@ -7,25 +7,22 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div>
+<body style="background-color: blanchedalmond;">
+
+
+
+    <div style="display: inline-block; vertical-align: bottom;">
         <form action="#">
-            <label for="cabinet">Кабинет №</label><input type="text" id= cabinet name="cabinet"><br>
-            <label for="tema">Тема</label><input type="text" id="tema" name="tema"><br>
-            <label for="usluga">Услуга</label><input type="text" id="usluga"><br>
-            <label for="opisanie">Описание заявки</label><input type="text" id="opisanie"><br>
+            <label for="cabinet">Кабинет №</label><br><input type="text" id= cabinet name="cabinet" required><br><br>
+            <label for="checkbox" style="font-size: 20px;">Я не работаю на новом арбате</label><br><input type="checkbox" id="checkbox" style="width: 20px; height: 20px;" required><br><br>
+            <label for="tema">Тема</label><br><input type="text" id="tema" name="tema" required><br><br>
+            <label for="usluga">Услуга</label><br><input type="text" id="usluga" required><br><br>
+            <label for="opisanie">Описание заявки</label><br><input type="text" id="opisanie" required><br><br>
 
             <input type="submit">
-
-
-
         </form>
-
-        
-        
-
-
     </div>
+
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </body>
 </html>
