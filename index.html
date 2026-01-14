@@ -2,166 +2,145 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ЭнергоСтройМонтаж | Строительство и монтаж ЛЭП</title>
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title>ООО «СКЭРН» — Строительство зданий</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand fw-bold text-uppercase" href="#"><i class="fas fa-bolt text-warning"></i> ЭнергоСтрой</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#home">Главная</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">О нас</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#services">Услуги</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projects">Проекты</a></li>
-                    <li class="nav-item"><a class="nav-link btn btn-warning text-dark ms-2 fw-bold" href="#contact">Связаться</a></li>
-                </ul>
-            </div>
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="#">ООО «СКЭРН»</a>
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="nav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#about">О компании</a></li>
+                <li class="nav-item"><a class="nav-link" href="#services">Услуги</a></li>
+                <li class="nav-item"><a class="nav-link" href="#stats">Показатели</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contacts">Контакты</a></li>
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
 
-    <header id="home" class="hero-section d-flex align-items-center text-white">
-        <div class="overlay"></div>
-        <div class="container text-center position-relative" data-aos="fade-up">
-            <h1 class="display-3 fw-bold mb-4">Профессиональный монтаж ЛЭП</h1>
-            <p class="lead mb-4">Строительство, реконструкция и обслуживание линий электропередач любой сложности. Гарантия качества и соблюдение сроков.</p>
-            <a href="#contact" class="btn btn-warning btn-lg px-5 py-3 fw-bold">Заказать расчет</a>
-        </div>
-    </header>
+<!-- HERO -->
+<header class="hero">
+    <div class="container text-center text-white">
+        <h1 class="fade-in">Строительство жилых и нежилых зданий</h1>
+        <p class="lead fade-in delay-1">Надёжность. Качество. Опыт.</p>
+    </div>
+</header>
 
-    <section id="about" class="py-5">
-        <div class="container py-5">
-            <div class="row align-items-center">
-                <div class="col-md-6" data-aos="fade-right">
-                    <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="img-fluid rounded shadow" alt="Инженер на ЛЭП">
-                </div>
-                <div class="col-md-6 mt-4 mt-md-0" data-aos="fade-left">
-                    <h2 class="fw-bold mb-3">Надежность в каждом киловатте</h2>
-                    <p class="text-muted">Мы — команда профессионалов с 10-летним опытом работы в сфере энергетики. Выполняем полный цикл работ: от проектирования до сдачи объекта в эксплуатацию.</p>
-                    <ul class="list-unstyled mt-3">
-                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Собственный парк спецтехники</li>
-                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Лицензии СРО и допуски Ростехнадзора</li>
-                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Работаем по всей области</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- ABOUT -->
+<section id="about" class="section">
+    <div class="container">
+        <h2 class="text-center mb-4">О компании</h2>
+        <p>
+            <strong>ООО «СКЭРН»</strong> — строительная компания, зарегистрированная в 2018 году в Республике Дагестан, г. Каспийск.
+            Основной вид деятельности — <strong>строительство жилых и нежилых зданий</strong>.
+        </p>
+        <ul>
+            <li>Генеральный директор: Ибрагимов Ренат Даниялович</li>
+            <li>Численность сотрудников: 13 человек</li>
+            <li>ОКВЭД: 41.20</li>
+            <li>Компания действует на 14 января 2026 года</li>
+        </ul>
+    </div>
+</section>
 
-    <section id="services" class="py-5 bg-light">
-        <div class="container">
-            <div class="text-center mb-5" data-aos="fade-up">
-                <h2 class="fw-bold">Наши услуги</h2>
-                <div class="divider mx-auto bg-warning"></div>
-            </div>
-            <div class="row g-4">
-                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="card h-100 border-0 shadow-sm service-card">
-                        <div class="card-body text-center p-4">
-                            <div class="icon-box mb-3 bg-warning rounded-circle mx-auto d-flex align-items-center justify-content-center">
-                                <i class="fas fa-broadcast-tower fa-2x text-dark"></i>
-                            </div>
-                            <h5 class="card-title fw-bold">Монтаж опор ЛЭП</h5>
-                            <p class="card-text text-muted">Установка железобетонных и металлических опор 0.4-10 кВ.</p>
-                        </div>
+<!-- SERVICES -->
+<section id="services" class="section bg-light">
+    <div class="container">
+        <h2 class="text-center mb-5">Наши услуги</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100 shadow fade-up">
+                    <img src="https://images.unsplash.com/photo-1590650046871-92c887180603" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Жилое строительство</h5>
+                        <p class="card-text">Многоквартирные и частные жилые дома под ключ.</p>
                     </div>
                 </div>
-                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="card h-100 border-0 shadow-sm service-card">
-                        <div class="card-body text-center p-4">
-                            <div class="icon-box mb-3 bg-warning rounded-circle mx-auto d-flex align-items-center justify-content-center">
-                                <i class="fas fa-plug fa-2x text-dark"></i>
-                            </div>
-                            <h5 class="card-title fw-bold">Прокладка СИП</h5>
-                            <p class="card-text text-muted">Монтаж самонесущего изолированного провода, замена голого провода.</p>
-                        </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 shadow fade-up delay-1">
+                    <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Нежилые здания</h5>
+                        <p class="card-text">Коммерческие, административные и производственные объекты.</p>
                     </div>
                 </div>
-                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="card h-100 border-0 shadow-sm service-card">
-                        <div class="card-body text-center p-4">
-                            <div class="icon-box mb-3 bg-warning rounded-circle mx-auto d-flex align-items-center justify-content-center">
-                                <i class="fas fa-tools fa-2x text-dark"></i>
-                            </div>
-                            <h5 class="card-title fw-bold">Обслуживание ТП</h5>
-                            <p class="card-text text-muted">Ремонт и техническое обслуживание трансформаторных подстанций.</p>
-                        </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 shadow fade-up delay-2">
+                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Капитальный и текущий ремонт зданий</h5>
+                        <p class="card-text">
+                            Комплексные работы по капитальному и текущему ремонту жилых и нежилых зданий.
+                        </p>
+
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="projects" class="py-5">
-        <div class="container">
-            <div class="text-center mb-5" data-aos="fade-up">
-                <h2 class="fw-bold">Выполненные проекты</h2>
-            </div>
-            <div class="row g-3">
-                <div class="col-md-4" data-aos="flip-left">
-                    <img src="https://images.unsplash.com/photo-1544724569-5f546fd6dd2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" class="img-fluid rounded w-100 project-img" alt="Проект 1">
-                </div>
-                <div class="col-md-4" data-aos="flip-left" data-aos-delay="100">
-                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" class="img-fluid rounded w-100 project-img" alt="Проект 2">
-                </div>
-                <div class="col-md-4" data-aos="flip-left" data-aos-delay="200">
-                    <img src="https://images.unsplash.com/photo-1565691082729-232a498b532c?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" class="img-fluid rounded w-100 project-img" alt="Проект 3">
-                </div>
-            </div>
-        </div>
-    </section>
+<section id="work" class="section bg-light">
+    <div class="container">
+        <h2 class="text-center mb-5">Наша работа</h2>
 
-    <section id="contact" class="py-5 bg-dark text-white">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 mb-4" data-aos="fade-right">
-                    <h2 class="fw-bold">Остались вопросы?</h2>
-                    <p class="lead text-secondary">Заполните форму, и мы перезвоним вам в течение 15 минут.</p>
-                    <div class="mt-4">
-                        <p><i class="fas fa-phone-alt text-warning me-2"></i> +7 (999) 123-45-67</p>
-                        <p><i class="fas fa-envelope text-warning me-2"></i> info@energostroy.ru</p>
-                        <p><i class="fas fa-map-marker-alt text-warning me-2"></i> г. Москва, ул. Энергетиков, д. 10</p>
-                    </div>
-                </div>
-                <div class="col-md-6" data-aos="fade-left">
-                    <form id="contactForm" class="bg-white p-4 rounded text-dark">
-                        <div class="mb-3">
-                            <label class="form-label">Ваше имя</label>
-                            <input type="text" class="form-control" required>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Телефон</label>
-                            <input type="tel" class="form-control" required>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Сообщение</label>
-                            <textarea class="form-control" rows="3"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-warning w-100 fw-bold">Отправить заявку</button>
-                    </form>
-                </div>
+        <div class="row g-4">
+            <div class="col-md-4 fade-up">
+                <img src="img/work1.jpg" class="work-img">
+            </div>
+
+            <div class="col-md-4 fade-up delay-1">
+                <img src="img/work2.jpg" class="work-img">
+            </div>
+
+            <div class="col-md-4 fade-up delay-2">
+                <img src="img/work3.jpg" class="work-img">
+            </div>
+
+            <div class="col-md-6 fade-up">
+                <img src="img/work4.jpg" class="work-img">
+            </div>
+
+            <div class="col-md-6 fade-up delay-1">
+                <img src="img/work5.jpg" class="work-img">
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <footer class="bg-black text-white text-center py-3">
-        <div class="container">
-            <small>&copy; 2023 ЭнергоСтрой. Все права защищены.</small>
-        </div>
-    </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="js/script.js"></script>
+<!-- CONTACTS -->
+<section id="contacts" class="section bg-dark text-white">
+    <div class="container">
+        <h2 class="text-center mb-4">Контакты</h2>
+        <p class="text-center">
+            Республика Дагестан, г. Каспийск, ул. Хизроева, д. 3<br>
+            Этаж: цоколь, помещение 2
+        </p>
+        <p class="text-center">
+            © ООО «СКЭРН», 2018–2026
+        </p>
+    </div>
+</section>
+
+<!-- JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+
 </body>
 </html>
