@@ -2,147 +2,226 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>ООО «СКЭРН» — Строительство зданий</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Примерка номера</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        :root {
+            --tg-theme-bg-color: #fff;
+            --tg-theme-secondary-bg-color: #efeff4;
+            --tg-theme-text-color: #000;
+            --tg-theme-button-color: #2481cc;
+            --tg-theme-button-text-color: #fff;
+            --tg-theme-hint-color: #999;
+        }
 
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--tg-theme-secondary-bg-color);
+            color: var(--tg-theme-text-color);
+            margin: 0; padding: 15px;
+            display: flex; flex-direction: column; align-items: center;
+        }
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/style.css">
+        .container {
+            width: 100%; max-width: 400px;
+            background: var(--tg-theme-bg-color);
+            padding: 20px; border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            box-sizing: border-box;
+        }
+
+        .plate-container { text-align: center; margin-bottom: 25px; }
+        .plate-badge {
+            display: inline-block; background: #fff; border: 2px solid #333;
+            border-radius: 4px; padding: 5px 15px; font-weight: 800;
+            font-size: 1.5rem; letter-spacing: 1px; color: #000;
+        }
+
+        .input-group { margin-bottom: 18px; }
+        label { display: block; font-size: 0.85rem; color: var(--tg-theme-hint-color); margin-bottom: 8px; }
+
+        select {
+            width: 100%; padding: 12px; border-radius: 10px;
+            border: 1px solid #e0e0e0; background: var(--tg-theme-bg-color);
+            font-size: 1rem; color: var(--tg-theme-text-color); outline: none;
+        }
+
+        /* Палитра */
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+        .color-dot {
+            aspect-ratio: 1/1; border-radius: 50%;
+            border: 2px solid #eee; cursor: pointer;
+            transition: transform 0.1s, border-color 0.2s;
+        }
+        .color-dot.active {
+            border-color: var(--tg-theme-button-color);
+            transform: scale(1.1);
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .custom-color-container {
+            display: flex; align-items: center; gap: 12px;
+            padding: 12px; background: var(--tg-theme-secondary-bg-color);
+            border-radius: 12px;
+        }
+        input[type="color"] {
+            border: none; width: 35px; height: 35px;
+            cursor: pointer; background: none; padding: 0;
+        }
+        #color-name-display { font-size: 0.95rem; font-weight: 600; }
+
+        .main-button {
+            width: 100%; padding: 16px;
+            background-color: var(--tg-theme-button-color);
+            color: var(--tg-theme-button-text-color);
+            border: none; border-radius: 12px;
+            font-size: 1.1rem; font-weight: bold;
+            margin-top: 10px; cursor: pointer;
+        }
+    </style>
 </head>
 <body>
 
-<!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-    <div class="container">
-        <a class="navbar-brand fw-bold" href="#">ООО «СКЭРН»</a>
-        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="nav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="#about">О компании</a></li>
-                <li class="nav-item"><a class="nav-link" href="#services">Услуги</a></li>
-                <li class="nav-item"><a class="nav-link" href="#stats">Показатели</a></li>
-                <li class="nav-item"><a class="nav-link" href="#contacts">Контакты</a></li>
-            </ul>
-        </div>
+<div class="container">
+    <div class="plate-container">
+        <label>Примерка номера:</label>
+        <div id="plate-number" class="plate-badge">...</div>
     </div>
-</nav>
 
-<!-- HERO -->
-<header class="hero">
-    <div class="container text-center text-white">
-        <h1 class="fade-in">Строительство жилых и нежилых зданий</h1>
-        <p class="lead fade-in delay-1">Надёжность. Качество. Опыт.</p>
+    <div class="input-group">
+        <label>Выберите модель</label>
+        <select id="car-model"></select>
     </div>
-</header>
 
-<!-- ABOUT -->
-<section id="about" class="section">
-    <div class="container">
-        <h2 class="text-center mb-4">О компании</h2>
-        <p>
-            <strong>ООО «СКЭРН»</strong> — строительная компания, зарегистрированная в 2018 году в Республике Дагестан, г. Каспийск.
-            Основной вид деятельности — <strong>строительство жилых и нежилых зданий</strong>.
-        </p>
-        <ul>
-            <li>Генеральный директор: Ибрагимов Ренат Даниялович</li>
-            <li>Работаем с 2018 года</li>
-            <li>Основной ОКВЭД: 41.20</li>
-            <li>ИНН: 0571012226</li>
-        </ul>
+    <div class="input-group">
+        <label>Год выпуска</label>
+        <select id="car-year"></select>
     </div>
-</section>
 
-<!-- SERVICES -->
-<section id="services" class="section bg-light">
-    <div class="container">
-        <h2 class="text-center mb-5">Наши услуги</h2>
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="card h-100 shadow fade-up">
-                    <img src="https://images.unsplash.com/photo-1590650046871-92c887180603" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title">Жилое строительство</h5>
-                        <p class="card-text">Многоквартирные и частные жилые дома под ключ.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card h-100 shadow fade-up delay-1">
-                    <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title">Нежилые здания</h5>
-                        <p class="card-text">Коммерческие, административные и производственные объекты.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card h-100 shadow fade-up delay-2">
-                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title">Капитальный и текущий ремонт зданий</h5>
-                        <p class="card-text">
-                            Комплексные работы по капитальному и текущему ремонту жилых и нежилых зданий.
-                        </p>
-
-                    </div>
-                </div>
+    <div class="input-group">
+        <label>Цвет (25 популярных оттенков)</label>
+        <div class="color-grid" id="color-palette"></div>
+        
+        <div class="custom-color-container">
+            <input type="color" id="custom-color-picker" value="#ffffff">
+            <div>
+                <div style="font-size: 0.7rem; color: gray;">ВЫБРАНО:</div>
+                <div id="color-name-display">Белый</div>
             </div>
         </div>
     </div>
-</section>
 
-<section id="work" class="section bg-light">
-    <div class="container">
-        <h2 class="text-center mb-5">Наша работа</h2>
+    <button class="main-button" id="submit-btn">Посмотреть на машине</button>
+</div>
 
-        <div class="row g-4">
-            <div class="col-md-4 fade-up">
-                <img src="img/work1.jpg" class="work-img">
-            </div>
+<script>
+    const tg = window.Telegram.WebApp;
+    tg.expand();
 
-            <div class="col-md-4 fade-up delay-1">
-                <img src="img/work2.jpg" class="work-img">
-            </div>
+    const models = [
+        ["Лада Веста", "car_lada"], ["Тойота Камри", "car_camry"], ["Тойота LC200", "car_lc200"],
+        ["BMW X5", "car_bmwx5"], ["Mercedes GLE", "car_gle"], ["Audi Q7", "car_audiq7"],
+        ["Kia Sportage", "car_kia"], ["Hyundai Tucson", "car_tucson"], ["Volkswagen Tiguan", "car_tiguan"],
+        ["Skoda Kodiaq", "car_kodiaq"], ["Nissan X-Trail", "car_xtrail"], ["Mitsubishi Outlander", "car_outlander"],
+        ["Mazda CX-5", "car_cx5"], ["Honda CR-V", "car_crv"], ["Ford Explorer", "car_explorer"],
+        ["Chevrolet Tahoe", "car_tahoe"], ["Subaru Forester", "car_forester"], ["Renault Duster", "car_duster"],
+        ["Lexus RX", "car_lexusrx"], ["Infiniti QX60", "car_qx60"], ["Hyundai Solaris", "car_solaris"],
+        ["Kia Rio", "car_rio"], ["Лада Приора", "car_priora"], ["Лада Нива", "car_niva"],
+        ["Лада Гранта", "car_granta"], ["BMW M3", "car_m3"], ["BMW M5", "car_m5"],
+        ["Mercedes E-Класс", "car_eclass"], ["Mercedes S-Класс", "car_sclass"], ["Ford Focus", "car_focus"],
+        ["Тойота Камри XV55", "car_camry55"], ["Lixiang L7", "car_li7"], ["Changan X5", "car_changanx5"],
+        ["Changan Uni-Z", "car_changanuniz"], ["Kia K5", "car_k5"], ["Тойота Прадо", "car_prado"],
+        ["Volkswagen Polo", "car_polo"], ["Skoda Rapid", "car_rapid"]
+    ];
 
-            <div class="col-md-4 fade-up delay-2">
-                <img src="img/work3.jpg" class="work-img">
-            </div>
+    const popularColors = [
+        {name: "Белый", hex: "#ffffff"}, {name: "Черный", hex: "#000000"},
+        {name: "Матовый черный", hex: "#1a1a1a"}, {name: "Серебристый", hex: "#c0c0c0"},
+        {name: "Серый", hex: "#808080"}, {name: "Нардо Грей", hex: "#6c7277"},
+        {name: "Мокрый асфальт", hex: "#46494b"}, {name: "Графит", hex: "#383838"},
+        {name: "Темно-синий", hex: "#000080"}, {name: "Ярко-синий", hex: "#0000ff"},
+        {name: "Электрик", hex: "#2c39d4"}, {name: "Голубой", hex: "#87ceeb"},
+        {name: "Красный", hex: "#ff0000"}, {name: "Бордовый", hex: "#800000"},
+        {name: "Темно-зеленый", hex: "#006400"}, {name: "Изумрудный", hex: "#50c878"},
+        {name: "Хаки", hex: "#bdb76b"}, {name: "Коричневый", hex: "#8b4513"},
+        {name: "Золотистый", hex: "#ffd700"}, {name: "Бежевый", hex: "#f5f5dc"},
+        {name: "Оранжевый", hex: "#ffa500"}, {name: "Желтый", hex: "#ffff00"},
+        {name: "Баклажан", hex: "#4b0082"}, {name: "Розовый", hex: "#ffc0cb"},
+        {name: "Бронзовый", hex: "#cd7f32"}
+    ];
 
-            <div class="col-md-6 fade-up">
-                <img src="img/work4.jpg" class="work-img">
-            </div>
+    let selectedColorName = "Белый";
+    let selectedColorHex = "#ffffff";
 
-            <div class="col-md-6 fade-up delay-1">
-                <img src="img/work5.jpg" class="work-img">
-            </div>
-        </div>
-    </div>
-</section>
+    // Заполнение моделей и годов
+    const modelSelect = document.getElementById('car-model');
+    models.forEach(m => modelSelect.add(new Option(m[0], m[1])));
 
+    const yearSelect = document.getElementById('car-year');
+    for (let y = 2026; y >= 1990; y--) yearSelect.add(new Option(y, y));
 
-<!-- CONTACTS -->
-<section id="contacts" class="section bg-dark text-white">
-    <div class="container">
-        <h2 class="text-center mb-4">Контакты</h2>
-        <p class="text-center">
-            Республика Дагестан, г. Каспийск, ул. Хизроева, д. 3<br>
-            Этаж: цоколь, помещение 2
-        </p>
-        <p class="text-center">
-            © ООО «СКЭРН», 2018–2026
-        </p>
-    </div>
-</section>
+    // Создание сетки цветов
+    const paletteGrid = document.getElementById('color-palette');
+    popularColors.forEach(color => {
+        const dot = document.createElement('div');
+        dot.className = 'color-dot';
+        dot.style.backgroundColor = color.hex;
+        if(color.name === "Белый") dot.classList.add('active');
+        
+        dot.onclick = () => {
+            document.querySelectorAll('.color-dot').forEach(d => d.classList.remove('active'));
+            dot.classList.add('active');
+            selectedColorName = color.name;
+            selectedColorHex = color.hex;
+            document.getElementById('color-name-display').innerText = color.name;
+            document.getElementById('custom-color-picker').value = color.hex;
+        };
+        paletteGrid.appendChild(dot);
+    });
 
-<!-- JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<script src="js/main.js"></script>
+    const customPicker = document.getElementById('custom-color-picker');
+    customPicker.oninput = (e) => {
+        document.querySelectorAll('.color-dot').forEach(d => d.classList.remove('active'));
+        selectedColorHex = e.target.value;
+        selectedColorName = "Свой оттенок (" + e.target.value + ")";
+        document.getElementById('color-name-display').innerText = selectedColorName;
+    };
 
+    // Параметр номера из ссылки
+    const plate = tg.initDataUnsafe.start_param || "Н989ОО06";
+    document.getElementById('plate-number').innerText = plate;
+
+    document.getElementById('submit-btn').onclick = () => {
+        const data = {
+            user_id: tg.initDataUnsafe.user?.id || 0,
+            plate: plate,
+            model: modelSelect.options[modelSelect.selectedIndex].text,
+            year: yearSelect.value,
+            color: selectedColorName,
+            color_hex: selectedColorHex
+        };
+
+        tg.MainButton.setText("ОТПРАВКА...");
+        tg.MainButton.show();
+        
+        // Ссылка на ваш сервер
+        fetch('/api/generate', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(data)
+        }).then(() => {
+            tg.showAlert("Готовим фото! Это займет около 30-40 секунд.");
+            tg.close();
+        }).catch(() => {
+            tg.showAlert("Ошибка подключения к серверу");
+        });
+    };
+</script>
 </body>
 </html>
-
-
