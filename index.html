@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Premium Designer Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top premium-nav">
+    <div class="container">
+        <a class="navbar-brand" href="#">DESIGN</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="#about">Обо мне</a></li>
+                <li class="nav-item"><a class="nav-link" href="#works">Мои работы</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Контакты</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero d-flex align-items-center">
+    <div class="container text-white">
+        <div class="hero-content">
+            <h1 class="hero-title">Интерьер. Форма. Тишина.</h1>
+            <p class="hero-subtitle">Премиальный дизайн квартир и пространств</p>
+            <button class="btn btn-outline-light mt-4 scroll-btn">Смотреть проекты</button>
+        </div>
+    </div>
+    <div class="hero-overlay"></div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section-light">
+    <div class="container">
+        <div class="row justify-content-center text-center">
+            <div class="col-lg-8">
+                <h2 class="section-title">Обо мне</h2>
+                <p class="about-text">
+                    Создаю лаконичные и функциональные пространства.
+                    Работаю с жилыми интерьерами премиум-класса.
+                    Минимализм, чистая геометрия и внимание к деталям.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- WORKS -->
+<section id="works" class="section-dark">
+    <div class="container text-center">
+        <h2 class="section-title text-white">Мои работы</h2>
+
+        <div class="carousel-container mt-5">
+
+            <div class="carousel-track">
+
+                <div class="carousel-item-custom active">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="">
+                </div>
+
+                <div class="carousel-item-custom">
+                    <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498f" alt="">
+                </div>
+
+                <div class="carousel-item-custom">
+                    <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0" alt="">
+                </div>
+
+            </div>
+
+            <button class="carousel-btn prev">&#10094;</button>
+            <button class="carousel-btn next">&#10095;</button>
+
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section-light text-center">
+    <div class="container">
+        <h2 class="section-title">Контакты</h2>
+        <p class="contact-text">designer@email.com</p>
+    </div>
+</section>
+
+<footer class="footer text-center">
+    © 2026 Interior Designer
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="scripts.js"></script>
+</body>
+</html>

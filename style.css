@@ -1,0 +1,153 @@
+:root {
+    --white: #ffffff;
+    --black: #000000;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--white);
+    color: var(--black);
+    overflow-x: hidden;
+}
+
+/* NAVBAR */
+.premium-nav {
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(10px);
+    padding: 20px 0;
+}
+
+.navbar-brand {
+    color: var(--white);
+    letter-spacing: 3px;
+    font-weight: 300;
+    font-size: 1.3rem;
+}
+
+.nav-link {
+    color: var(--white) !important;
+    margin-left: 30px;
+    font-weight: 300;
+    transition: 0.4s;
+}
+
+.nav-link:hover {
+    opacity: 0.6;
+}
+
+/* HERO */
+.hero {
+    height: 100vh;
+    background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+}
+
+.hero-title {
+    font-size: 4rem;
+    font-weight: 200;
+    letter-spacing: 2px;
+    animation: fadeIn 1.5s ease forwards;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    margin-top: 20px;
+    opacity: 0.8;
+}
+
+/* SECTIONS */
+.section-light {
+    padding: 120px 0;
+    background: var(--white);
+}
+
+.section-dark {
+    padding: 120px 0;
+    background: var(--black);
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-bottom: 40px;
+}
+
+.about-text, .contact-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    opacity: 0.8;
+}
+
+/* CAROUSEL */
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.carousel-item-custom {
+    min-width: 100%;
+    padding: 0 50px;
+    opacity: 0.4;
+    transform: scale(0.9);
+    transition: 0.6s;
+}
+
+.carousel-item-custom.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.carousel-item-custom img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    color: white;
+    font-size: 2rem;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.prev { left: 20px; }
+.next { right: 20px; }
+
+/* FOOTER */
+.footer {
+    background: var(--black);
+    color: var(--white);
+    padding: 40px 0;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(30px);}
+    to {opacity: 1; transform: translateY(0);}
+}
